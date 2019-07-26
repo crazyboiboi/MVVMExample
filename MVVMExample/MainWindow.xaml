@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVMExample"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="500">
+        Title="MainWindow" Height="300" Width="500">
 
     <Window.DataContext>
         <local:PersonViewModel/>
@@ -16,12 +16,15 @@
         <DataTemplate DataType="{x:Type local:PersonModel}">
 
             <StackPanel Orientation = "Horizontal">
+                <TextBlock Text = "{Binding ID}" 
+               Width = "50" Margin = "3 5 3 5"/>
+
                 <TextBlock Text = "{Binding Name}" 
                Width = "100" Margin = "3 5 3 5"/>
 
                 <TextBlock Text = "{Binding Age}" 
                Width = "40" Margin = "0 5 3 5"/>
-                
+
                 <TextBlock Text = "{Binding Job}" 
                Width = "75" Margin = "0 5 3 5"/>
 
@@ -30,34 +33,34 @@
 
         </DataTemplate>
     </Window.Resources>
-    
 
-    
-    
+
+
+
     <!--
         TO DO 
-        - create a new property ID for person model so we can use it for matching
-          data and update the observablecollection
         - allow data of the chosen person to changed and be updated 
     -->
-    
-    
+
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.6*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        
-        
-        <StackPanel Margin="10 0 0 0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
-            <TextBlock Text="Name" />            
+
+
+
+        <StackPanel Margin="10 10 10 10" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <TextBlock Margin="0 0 0 10" Text="{Binding Path=id, StringFormat='ID: {0}'}"/>
+
+            <TextBlock Text="Name" />
             <TextBox Padding="2" Margin="0 0 0 10" Text="{Binding name, Mode=TwoWay}"/>
-            
+
             <TextBlock Text="Age" />
             <TextBox Padding="2" Margin="0 0 0 10" Text="{Binding age, Mode=TwoWay}"/>
-            
-            <TextBlock Text="Job" />            
+
+            <TextBlock Text="Job" />
             <TextBox Padding="2" Text="{Binding job, Mode=TwoWay}"/>
 
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
@@ -65,20 +68,20 @@
                 <Button Height="20" Width="45" Content="Update" Margin="10 20 0 0 " Command="{Binding UpdatePersonCommand}"/>
                 <Button Height="20" Width="45" Content="Delete" Margin="10 20 0 0 " Command="{Binding DeletePersonCommand}"/>
             </StackPanel>
-            
+
         </StackPanel>
 
 
 
 
-        <Grid Margin="10 10 10 10" Grid.Column="1">
+        <Grid Margin="10.2,10,9.6,10" Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.15*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
@@ -87,7 +90,7 @@
 
             <ListBox Grid.ColumnSpan="2" Grid.Row="1" SelectedItem="{Binding SelectedPerson}" ItemsSource="{Binding FilteredPeopleList, Mode=OneWay}"/>
         </Grid>
-        
+
 
 
     </Grid>

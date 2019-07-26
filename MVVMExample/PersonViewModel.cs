@@ -16,7 +16,7 @@ namespace MVVMExample
     class PersonViewModel : ViewModelBase
     {
         #region Fields 
-
+        public int currentIdNumber = 0;
         public ObservableCollection<PersonModel> people { get; set; }
         public ObservableCollection<string> Jobs { get; set; }
 
@@ -34,6 +34,21 @@ namespace MVVMExample
                 
             }
         }
+
+
+        private int _id;
+        public int id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                Set(ref _id, value);
+            }
+        }
+
 
         private string _name;
         public string name
@@ -136,7 +151,7 @@ namespace MVVMExample
                 Set(ref _selectedPerson, value);
                 if (_selectedPerson != null)
                 {
-                    populatePersonDetailForm(value.Name, value.Age, value.Job, value.Selected);
+                    populatePersonDetailForm(value.ID, value.Name, value.Age, value.Job, value.Selected);
                 }
                 updatePersonCommand.RaiseCanExecuteChanged();
             }
@@ -215,8 +230,9 @@ namespace MVVMExample
 
         private void enterPerson ()
         {
-            PersonModel p = new PersonModel() { Name = name, Age = age , Job = job, Selected = false};
+            PersonModel p = new PersonModel() { ID = currentIdNumber++, Name = name, Age = age , Job = job, Selected = false};
             people.Add(p);
+            id = p.ID + 1;
             total = "Total: " + people.Count;
         }
 
@@ -236,8 +252,9 @@ namespace MVVMExample
         }
 
 
-        private void populatePersonDetailForm(string n, int a, string j, bool isSelected)
+        private void populatePersonDetailForm(int ID, string n, int a, string j, bool isSelected)
         {
+            id = ID;
             name = n;
             age = a;
             job = j;
