@@ -4,6 +4,10 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # User-specific files
+<<<<<<< HEAD
+=======
+*.rsuser
+>>>>>>> Add .gitignore and .gitattributes.
 *.suo
 *.user
 *.userosscache
@@ -19,6 +23,11 @@
 [Rr]eleases/
 x64/
 x86/
+<<<<<<< HEAD
+=======
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+>>>>>>> Add .gitignore and .gitattributes.
 bld/
 [Bb]in/
 [Oo]bj/
@@ -52,7 +61,10 @@ BenchmarkDotNet.Artifacts/
 project.lock.json
 project.fragment.lock.json
 artifacts/
+<<<<<<< HEAD
 **/Properties/launchSettings.json
+=======
+>>>>>>> Add .gitignore and .gitattributes.
 
 # StyleCop
 StyleCopReport.xml
@@ -60,7 +72,11 @@ StyleCopReport.xml
 # Files built by Visual Studio
 *_i.c
 *_p.c
+<<<<<<< HEAD
 *_i.h
+=======
+*_h.h
+>>>>>>> Add .gitignore and .gitattributes.
 *.ilk
 *.meta
 *.obj
@@ -77,6 +93,10 @@ StyleCopReport.xml
 *.tlh
 *.tmp
 *.tmp_proj
+<<<<<<< HEAD
+=======
+*_wpftmp.csproj
+>>>>>>> Add .gitignore and .gitattributes.
 *.log
 *.vspscc
 *.vssscc
@@ -208,7 +228,11 @@ _pkginfo.txt
 # files ending in .cache can be ignored
 *.[Cc]ache
 # but keep track of directories ending in .cache
+<<<<<<< HEAD
 !*.[Cc]ache/
+=======
+!?*.[Cc]ache/
+>>>>>>> Add .gitignore and .gitattributes.
 
 # Others
 ClientBin/
@@ -221,7 +245,11 @@ ClientBin/
 *.publishsettings
 orleans.codegen.cs
 
+<<<<<<< HEAD
 # Including strong name files can present a security risk 
+=======
+# Including strong name files can present a security risk
+>>>>>>> Add .gitignore and .gitattributes.
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
 #*.snk
 
@@ -252,6 +280,10 @@ ServiceFabricBackup/
 *.bim.layout
 *.bim_*.settings
 *.rptproj.rsuser
+<<<<<<< HEAD
+=======
+*- Backup*.rdl
+>>>>>>> Add .gitignore and .gitattributes.
 
 # Microsoft Fakes
 FakesAssemblies/
@@ -291,8 +323,13 @@ paket-files/
 .idea/
 *.sln.iml
 
+<<<<<<< HEAD
 # CodeRush
 .cr/
+=======
+# CodeRush personal settings
+.cr/personal
+>>>>>>> Add .gitignore and .gitattributes.
 
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
@@ -317,7 +354,11 @@ __pycache__/
 # OpenCover UI analysis results
 OpenCover/
 
+<<<<<<< HEAD
 # Azure Stream Analytics local run output 
+=======
+# Azure Stream Analytics local run output
+>>>>>>> Add .gitignore and .gitattributes.
 ASALocalRun/
 
 # MSBuild Binary and Structured Log
@@ -326,5 +367,16 @@ ASALocalRun/
 # NVidia Nsight GPU debugger configuration file
 *.nvuser
 
+<<<<<<< HEAD
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+=======
+# MFractors (Xamarin productivity tool) working folder
+.mfractor/
+
+# Local History for Visual Studio
+.localhistory/
+
+# BeatPulse healthcheck temp database
+healthchecksdb
+>>>>>>> Add .gitignore and .gitattributes.
