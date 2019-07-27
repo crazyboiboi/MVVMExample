@@ -264,7 +264,16 @@ namespace MVVMExample
 
         private void updatePerson ()
         {
-            Console.WriteLine(_selectedPerson.ToString());
+            PersonModel updatedPerson = new PersonModel { ID = _selectedPerson.ID, Name = name, Age = age, Job = job, Selected = false };
+            for(int i=0; i<people.Count; i++)
+            {
+                if(people[i].ID == _selectedPerson.ID)
+                {
+                    people[i] = updatedPerson;
+                    break;
+                }
+            }
+
             SelectedPerson = null;
             name = "";
             age = 0;

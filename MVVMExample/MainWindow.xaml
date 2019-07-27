@@ -37,12 +37,6 @@
 
 
 
-    <!--
-        TO DO 
-        - allow data of the chosen person to changed and be updated 
-    -->
-
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.6*"/>
