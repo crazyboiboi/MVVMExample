@@ -49,13 +49,13 @@
             <TextBlock Margin="0 0 0 10" Text="{Binding Path=id, StringFormat='ID: {0}'}"/>
 
             <TextBlock Text="Name" />
-            <TextBox Padding="2" Margin="0 0 0 10" Text="{Binding name, Mode=TwoWay}"/>
+            <TextBox Padding="2" Margin="0 0 0 10" Text="{Binding name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Text="Age" />
-            <TextBox Padding="2" Margin="0 0 0 10" Text="{Binding age, Mode=TwoWay}"/>
+            <TextBox Padding="2" Margin="0 0 0 10" Text="{Binding age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Text="Job" />
-            <TextBox Padding="2" Text="{Binding job, Mode=TwoWay}"/>
+            <TextBox Padding="2" Text="{Binding job, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <Button Height="20" Width="45" Content="Enter" Margin="0 20 0 0 " Command="{Binding EnterPersonCommand}"/>
